@@ -1,25 +1,75 @@
 <!doctype html>
-<meta charset="utf-8">
-<title>MindBreath — Support</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;max-width:760px;margin:40px auto;padding:0 16px;line-height:1.6}
-  h1{font-size:1.8rem;margin-bottom:.2rem}
-  .card{background:#f7f8f9;border:1px solid #e5e7eb;border-radius:12px;padding:16px}
-  a{color:#0ea5a6;text-decoration:none}
-</style>
-<h1>MindBreath — Support</h1>
-<p>MindBreath helps you practice calm, guided breathing.</p>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MindBreath — Support</title>
+  <meta name="description" content="Get help with MindBreath. FAQs, contact, and troubleshooting." />
+  <link rel="icon" href="assets/favicon.png" />
+  <style>
+    :root{--bg:#f7fbfa;--card:#fff;--ink:#0c1413;--muted:#5a6b69;--brand:#0fa294;--ring:#dff3f0}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
+    header,main,footer{max-width:1100px;margin:0 auto;padding:28px 20px}
+    .brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit}
+    .brand img{width:36px;height:36px;border-radius:10px}
+    nav a{margin-left:18px;text-decoration:none;color:var(--muted)} nav a:hover{color:var(--ink)}
+    h1{font-size:clamp(28px,4.5vw,42px);margin:.25em 0}
+    .lead{color:var(--muted);max-width:60ch}
+    .card{background:var(--card);border:1px solid #e8f1ef;border-radius:16px;padding:18px;margin:14px 0}
+    .faq h3{margin:.2em 0 .35em;font-size:1.05rem}
+    code{background:#eef6f4;border:1px solid #e0efec;border-radius:6px;padding:2px 6px}
+    footer{border-top:1px solid #e8f1ef;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="./"><img src="assets/MB-Icon.png" alt="MindBreath icon"><strong>MindBreath</strong></a>
+    <nav>
+      <a href="./">Home</a>
+      <a href="support.html" aria-current="page">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
 
-<div class="card">
-  <p><strong>Version:</strong> 1.0.1</p>
-  <p><strong>Contact:</strong> <a href="mailto:carlos@infrahardener.com">carlos@infrahardener.com</a></p>
-</div>
+  <main>
+    <h1>Support</h1>
+    <p class="lead">We’re here to help. Browse common questions below or email us and we’ll get back to you.</p>
 
-<h2>FAQ</h2>
-<ul>
-  <li><strong>Export CSV:</strong> Copies your session history to the clipboard.</li>
-  <li><strong>Appearance:</strong> Choose Light, Dark, or System in Settings.</li>
-</ul>
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:carlos@infrahardener.com">carlos@infrahardener.com</a></p>
+      <p>When reporting an issue, include your device model and OS version if possible.</p>
+    </div>
 
-<p>If you experience any issue, email us with your device model and iOS version.</p>
+    <section class="faq">
+      <div class="card">
+        <h3>How do I export my breathing history?</h3>
+        <p>Open <strong>Settings → Export CSV</strong>. Your session history will be copied to the clipboard so you can paste it into Notes, Mail, or a spreadsheet.</p>
+      </div>
+      <div class="card">
+        <h3>How do I change the theme?</h3>
+        <p>Go to <strong>Settings → Appearance</strong> and choose <em>Light</em>, <em>Dark</em>, or <em>System</em>.</p>
+      </div>
+      <div class="card">
+        <h3>The breathing cues are too fast/slow.</h3>
+        <p>Try another pattern (e.g., Box, 4-7-8) or create a custom one with your preferred inhale, hold, and exhale counts.</p>
+      </div>
+      <div class="card">
+        <h3>Does MindBreath work offline?</h3>
+        <p>Yes. All features work without an internet connection. Your data stays on your device.</p>
+      </div>
+      <div class="card">
+        <h3>How do I send feedback or a feature request?</h3>
+        <p>We’d love to hear from you — email <a href="mailto:carlos@infrahardener.com">carlos@infrahardener.com</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© <span id="y"></span> MindBreath Labs</div>
+    <div><a href="./">Home</a> · <a href="privacy.html">Privacy</a></div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
