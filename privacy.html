@@ -1,13 +1,78 @@
 <!doctype html>
-<meta charset="utf-8">
-<title>MindBreath — Privacy Policy</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;max-width:760px;margin:40px auto;padding:0 16px;line-height:1.6}
-  h1{font-size:1.8rem;margin-bottom:.2rem}
-</style>
-<h1>Privacy Policy</h1>
-<p><strong>MindBreath</strong> does not collect personal data. Breathing settings and session counts are stored locally on your device using system storage (SharedPreferences).</p>
-<p>We do not use analytics, third-party SDKs, or advertising.</p>
-<p>For questions, contact <a href="mailto:carlostechops@gmail.com">carlostechops@gmail.com</a>.</p>
-<p>Last updated: September 2025</p>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MindBreath — Privacy Policy</title>
+  <meta name="description" content="MindBreath Privacy Policy — clear and simple." />
+  <link rel="icon" href="assets/favicon.png" />
+  <style>
+    :root{--bg:#f7fbfa;--card:#fff;--ink:#0c1413;--muted:#5a6b69}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);
+      font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
+    header,main,footer{max-width:900px;margin:0 auto;padding:28px 20px}
+    .brand{display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit}
+    .brand img{width:36px;height:36px;border-radius:10px}
+    nav a{margin-left:18px;text-decoration:none;color:var(--muted)} nav a:hover{color:var(--ink)}
+    h1{font-size:clamp(28px,4.5vw,42px);margin:.25em 0}
+    h2{margin:1.25em 0 .35em;font-size:1.15rem}
+    p,li{color:var(--ink);max-width:75ch}
+    .muted{color:var(--muted)}
+    footer{border-top:1px solid #e8f1ef;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="./"><img src="assets/MB-Icon.png" alt="MindBreath icon"><strong>MindBreath</strong></a>
+    <nav>
+      <a href="./">Home</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Privacy Policy</h1>
+    <p class="muted">Effective: <span id="date">2025-09-09</span></p>
+
+    <h2>Our promise</h2>
+    <p>MindBreath is designed to be calm and private. We don’t sell your data, we don’t track you across apps, and your breathing history stays on your device unless you choose to export it.</p>
+
+    <h2>Data we store</h2>
+    <ul>
+      <li><strong>Breathing sessions & settings</strong> — stored locally on your device.</li>
+      <li><strong>Crash diagnostics (optional)</strong> — platform-provided, anonymized diagnostics if you opt in to share with developers.</li>
+    </ul>
+
+    <h2>Data we don’t collect</h2>
+    <ul>
+      <li>No personal identifiers (name, email, contacts).</li>
+      <li>No location data.</li>
+      <li>No third-party analytics SDKs.</li>
+      <li>No ads or advertising trackers.</li>
+    </ul>
+
+    <h2>Exports</h2>
+    <p>If you export your session history (CSV), the file is generated on-device and only shared where you choose (e.g., Notes or Mail).</p>
+
+    <h2>Children’s privacy</h2>
+    <p>MindBreath is not directed to children under 13. If you believe a child has provided us information, contact us and we’ll help remove it.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about privacy? Email <a href="mailto:carlos@infrahardener.com">carlos@infrahardener.com</a>.</p>
+
+    <h2>Changes</h2>
+    <p>We may update this policy from time to time. The “Effective” date above will reflect the latest version.</p>
+  </main>
+
+  <footer>
+    <div>© <span id="y"></span> MindBreath Labs</div>
+    <div><a href="./">Home</a> · <a href="support.html">Support</a></div>
+  </footer>
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+    // If you want a dynamic date, you can set it here:
+    // document.getElementById('date').textContent = new Date().toISOString().slice(0,10);
+  </script>
+</body>
+</html>
