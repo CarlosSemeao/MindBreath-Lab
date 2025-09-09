@@ -4,25 +4,218 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MindBreath — User Privacy Choices</title>
-  <meta name="description" content="Learn about your privacy choices when using MindBreath." />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Manage your privacy choices for MindBreath: data export or deletion, notifications, clipboard usage, and platform settings." />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="preload" href="assets/MB-Icon.png" as="image" />
+  <style>
+    :root {
+      --bg: #0c1413;
+      --card: rgba(255,255,255,0.06);
+      --ink: #e5e7eb;
+      --muted: #a3a9b3;
+      --accent: #2dd4bf;
+      --accent-weak: rgba(45,212,191,.18);
+      --ring: rgba(45,212,191,.35);
+      --radius: 14px;
+      --max: 880px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+      color: var(--ink);
+      background: radial-gradient(1200px 1200px at 10% -10%, rgba(45,212,191,.08), transparent 50%),
+                  radial-gradient(1200px 1200px at 110% -10%, rgba(127,243,231,.06), transparent 40%),
+                  var(--bg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      position: sticky;
+      top: 0; z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(12,20,19,.45);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 18px 20px; }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px;
+    }
+    .brand img { width: 28px; height: 28px; border-radius: 8px; }
+    .menu { display: flex; gap: 14px; flex-wrap: wrap; }
+    .menu a { color: var(--muted); font-weight: 600; }
+    .menu a[aria-current="page"] { color: var(--ink); }
+
+    main { padding: 28px 20px 60px; }
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto 18px;
+      display: grid;
+      gap: 10px;
+    }
+    h1 { font-size: clamp(26px, 2.8vw, 36px); margin: 10px 0 6px; }
+    p.lead { color: var(--muted); max-width: 60ch; }
+
+    .grid {
+      max-width: var(--max);
+      margin: 10px auto 0;
+      display: grid;
+      gap: 16px;
+    }
+    @media (min-width: 860px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--accent-weak);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .meta { color: var(--muted); font-size: 13px; }
+
+    .callout {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: var(--radius);
+      border: 1px dashed var(--ring);
+      color: var(--muted);
+    }
+
+    ul, ol { margin: 10px 0 0 22px; }
+    li { margin: 6px 0; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      border-radius: 999px; padding: 10px 14px;
+      background: var(--accent-weak);
+      border: 1px solid var(--ring);
+      color: var(--ink); font-weight: 700;
+      text-decoration: none;
+    }
+    .btn:hover { background: rgba(45,212,191,.26); }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin-top: 60px;
+      padding: 18px 0 40px;
+      color: var(--muted);
+    }
+    footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    footer .wrap a { color: var(--muted); }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <img src="assets/MB-Icon.png" alt="MindBreath icon" width="28" height="28" />
+        <span>MindBreath</span>
+      </div>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="choices.html" aria-current="page">User Privacy Choices</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
-    <h1>User Privacy Choices</h1>
-    <p>MindBreath is designed to respect your privacy. We do not collect, share, or sell any personal data.</p>
+    <section class="hero">
+      <h1>User Privacy Choices</h1>
+      <p class="lead">
+        Control how MindBreath handles your data. We keep things simple:
+        no accounts, no third-party ads, and your session history is stored on your device.
+      </p>
+      <div class="meta">Last updated: <time datetime="2025-09-09">September 9, 2025</time></div>
+    </section>
 
-    <h2>Your Choices</h2>
-    <ul>
-      <li><strong>Data Storage:</strong> All session history is stored locally on your device only.</li>
-      <li><strong>No Accounts:</strong> MindBreath does not require you to create an account or log in.</li>
-      <li><strong>No Tracking:</strong> We do not use advertising trackers or third-party analytics.</li>
-      <li><strong>Delete Anytime:</strong> You may delete the app at any time to remove all data from your device.</li>
-    </ul>
+    <section class="grid">
+      <article class="card">
+        <h2>1) Export or Delete Your Data</h2>
+        <p>MindBreath stores your breathing session counts locally (on-device). You can:</p>
+        <ul>
+          <li><strong>Export CSV</strong> from the Progress tab (tap “Export CSV”).</li>
+          <li><strong>Delete data</strong> by uninstalling the app, or email us and we’ll guide you to clear the app’s local storage.</li>
+        </ul>
+        <p>
+          <a class="btn" href="mailto:carlostechops@gmail.com?subject=MindBreath%20Data%20Request&body=Please%20help%20me%20with%20%28export%20or%20deletion%29%20of%20my%20MindBreath%20data.%20Device%20model%3A%20___%2C%20OS%20version%3A%20___">
+            Email data request
+          </a>
+        </p>
+        <div class="callout">
+          CSV export copies data to your clipboard so you can paste into Notes, Numbers, or Excel.
+        </div>
+      </article>
 
-    <p>If you have any questions, please contact us at 
-      <a href="mailto:carlos@infrahardener.com">carlos@infrahardener.com</a>.
-    </p>
+      <article class="card">
+        <h2>2) Notifications</h2>
+        <p>MindBreath may request notification permission (if you enable reminders in the future).</p>
+        <ul>
+          <li><strong>iOS:</strong> Settings → Notifications → MindBreath → Allow/Disallow.</li>
+          <li><strong>Android:</strong> Settings → Apps → MindBreath → Notifications.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>3) Analytics & Tracking</h2>
+        <p>MindBreath does <strong>not</strong> use third-party analytics SDKs and does <strong>not</strong> track you across apps or websites.</p>
+        <ul>
+          <li>No ad networks, no cross-app tracking.</li>
+          <li>No login or account required.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>4) Clipboard Usage (CSV Export)</h2>
+        <p>When you export history, MindBreath places a CSV string on your device clipboard. Nothing is sent to our servers.</p>
+        <ul>
+          <li>You can clear the clipboard anytime (e.g., copy any other text).</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>5) Platform Privacy Controls</h2>
+        <p>Manage broader platform settings:</p>
+        <ul>
+          <li><a href="https://support.apple.com/en-us/HT212025" target="_blank" rel="noopener">Apple: App privacy settings</a></li>
+          <li><a href="https://support.google.com/android/answer/9075928" target="_blank" rel="noopener">Android: Privacy controls</a></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Questions?</h2>
+        <p>We’re happy to help.</p>
+        <p>
+          <a class="btn" href="mailto:carlostechops@gmail.com">Contact support</a>
+        </p>
+      </article>
+    </section>
   </main>
+
+  <footer>
+    <div class="wrap">
+      <div>© <span id="y"></span> MindBreath Labs</div>
+      <div>
+        <a href="support.html">Support</a> ·
+        <a href="privacy.html">Privacy</a> ·
+        <a href="choices.html" aria-current="page">User Privacy Choices</a>
+      </div>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
 </body>
 </html>
