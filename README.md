@@ -2,141 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MindBreath — Guided Breathwork for Calm & Focus</title>
-  <meta name="description" content="MindBreath helps you practice calm, guided breathing and track your progress with a simple, beautiful interface." />
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="MindBreath — Guided Breathwork for Calm & Focus" />
-  <meta property="og:description" content="Practice calm, guided breathing. Reduce stress. Track progress.">
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://carlossemeao.github.io/MindBreath-Lab/" />
-  <!-- Optional: replace with your social preview -->
-  <meta property="og:image" content="assets/og-cover.png" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MindBreath — Breathe better, feel calmer</title>
+  <meta name="description" content="MindBreath is a simple breathwork coach that helps you relax, focus, and track your progress on iOS and Android." />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="preload" href="assets/MB-Icon.png" as="image" />
   <style>
     :root{
-      --bg:#0C1413;
-      --card:#0f1917;
-      --ink:#E5E7EB;
-      --muted:#A7B0B3;
-      --teal:#14B8A6;
-      --ring: rgba(20,184,166,.25);
+      --bg:#f7fbfa;
+      --card:#ffffff;
+      --ink:#0c1413;
+      --muted:#5a6b69;
+      --brand:#0fa294;
+      --ring:#dff3f0;
+      --radius:20px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial;}
-    a{color:var(--teal);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:980px;margin:0 auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0 24px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,#20B2AA,#008080);}
-    nav a{margin-left:18px;color:var(--muted)}
-    nav a:hover{color:var(--ink)}
-    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;padding:28px;border:1px solid rgba(255,255,255,.06);background:linear-gradient(180deg,rgba(32,178,170,.06),rgba(32,178,170,0));border-radius:20px}
-    .kicker{color:var(--teal);font-weight:600;letter-spacing:.04em}
-    h1{margin:.25rem 0 0;font-size:40px;line-height:1.1}
-    .sub{color:var(--muted);margin-top:10px;font-size:18px}
-    .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px}
-    .badge{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;background:var(--card);border:1px solid rgba(255,255,255,.08)}
-    .badge span{display:block;line-height:1}
-    .badge small{color:var(--muted);display:block}
-    .ghost{opacity:.6}
-    .shot{border-radius:18px;border:1px solid rgba(255,255,255,.08);background:#09110f;min-height:300px;display:flex;align-items:center;justify-content:center;color:#6f7b7d}
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px}
-    .card h3{margin:0 0 6px}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-    footer{margin:44px 0 12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
-    .links{display:flex;gap:16px;align-items:center}
-    .pill{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:var(--card);color:var(--muted)}
-    .ring{box-shadow:0 0 0 8px var(--ring)}
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr}
-      .features{grid-template-columns:1fr}
-      .grid-2{grid-template-columns:1fr}
+    html,body{margin:0;height:100%}
+    body{
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
+      color:var(--ink); background:var(--bg);
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
+    header{
+      max-width:1100px; margin:0 auto; padding:28px 20px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .brand{display:flex; gap:12px; align-items:center; text-decoration:none; color:inherit}
+    .brand img{width:36px; height:36px; border-radius:10px}
+    nav a{color:var(--muted); text-decoration:none; margin-left:18px}
+    nav a:hover{color:var(--ink)}
+    .hero{
+      max-width:1100px; margin:10px auto 40px; padding:0 20px;
+      display:grid; grid-template-columns:1.2fr 1fr; gap:32px; align-items:center;
+    }
+    @media (max-width:900px){ .hero{grid-template-columns:1fr; text-align:center} }
+    .eyebrow{color:var(--brand); font-weight:600; letter-spacing:.04em; text-transform:uppercase; font-size:.85rem}
+    h1{font-size:clamp(32px,6vw,56px); line-height:1.05; margin:.25em 0}
+    .lead{color:var(--muted); font-size:1.1rem; margin:.75em 0 1.25em}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-start}
+    @media (max-width:900px){ .cta{justify-content:center} }
+    .btn{
+      background:var(--ink); color:#fff; border:none; padding:12px 16px;
+      border-radius:12px; text-decoration:none; font-weight:600;
+    }
+    .btn.alt{background:#fff; color:var(--ink); border:1px solid #dfe8e6}
+    .shot{
+      background:radial-gradient(circle at 50% 50%, var(--ring) 0, #eff8f6 65%, transparent 66%),
+                 radial-gradient(circle at 50% 50%, #e9f6f3 0, transparent 36%);
+      border-radius:var(--radius); padding:20px; display:grid; place-items:center;
+      box-shadow:0 10px 30px rgba(15,162,148,.08), inset 0 0 0 1px #e8f1ef;
+    }
+    .shot img{
+      width:min(420px, 90%); height:auto; border-radius:18px; display:block;
+      box-shadow:0 8px 28px rgba(15,162,148,.15);
+    }
+    .features{
+      max-width:1100px; margin:10px auto 80px; padding:0 20px;
+      display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+    }
+    @media (max-width:900px){ .features{grid-template-columns:1fr} }
+    .card{
+      background:var(--card); border:1px solid #e8f1ef; border-radius:16px; padding:18px;
+    }
+    .card h3{margin:.2em 0 .35em; font-size:1.05rem}
+    .card p{margin:0; color:var(--muted)}
+    footer{
+      border-top:1px solid #e8f1ef; padding:24px 20px; color:var(--muted);
+    }
+    footer .wrap{max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <!-- Replace with your real icon, e.g. assets/icon/MB-Icon.png -->
-        <div class="logo" aria-hidden="true"></div>
-        <strong>MindBreath</strong>
-      </div>
-      <nav>
-        <a href="./support.html">Support</a>
-        <a href="./privacy.html">Privacy</a>
-        <!-- You can add a Blog/Changelog later -->
-      </nav>
-    </header>
+  <header>
+    <a class="brand" href="./">
+      <img src="assets/MB-Icon.png" alt="MindBreath icon"/>
+      <strong>MindBreath</strong>
+    </a>
+    <nav>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="#download">Download</a>
+    </nav>
+  </header>
 
-    <section class="hero">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Breathe better</div>
+      <h1>Calm, guided breathing—without the noise</h1>
+      <p class="lead">
+        A minimal breathwork coach that helps you relax, focus, and build a daily habit.
+        No feeds. No distractions. Just your breath and a gentle rhythm.
+      </p>
+      <div class="cta" id="download">
+        <!-- Replace hrefs with real store links when ready -->
+        <a class="btn" href="#" aria-label="Get MindBreath on the App Store">App Store</a>
+        <a class="btn alt" href="#" aria-label="Get MindBreath on Google Play">Google Play</a>
+      </div>
+      <p class="lead" style="margin-top:14px; font-size:.95rem">
+        Available on iOS & Android • v1.0.1
+      </p>
+    </div>
+
+    <!-- Your app art as the visual focus -->
+    <div class="shot" aria-hidden="true">
+      <img src="assets/MB-Icon.png" alt="MindBreath calming rings artwork" />
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="card">
+      <h3>Simple sessions</h3>
+      <p>Pick a pattern (Box, 4-7-8, custom), set a duration, and breathe with subtle cues.</p>
+    </div>
+    <div class="card">
+      <h3>Progress you can feel</h3>
+      <p>Track completed sessions and streaks to build a sustainable routine.</p>
+    </div>
+    <div class="card">
+      <h3>Gentle by design</h3>
+      <p>No ads. No accounts. Works offline. Your breathing data stays on your device.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>© <span id="y"></span> MindBreath Labs</div>
       <div>
-        <div class="kicker">Guided Breathwork</div>
-        <h1>Breathe better. Feel calmer.<br/>Track your progress.</h1>
-        <p class="sub">
-          MindBreath gives you simple, beautiful breathing sessions (inhale · hold · exhale · rest),
-          gentle haptics, and a clear progress view. Designed for focus and calm — anytime.
-        </p>
-        <div class="cta">
-          <!-- Replace href with your real store links -->
-          <a class="badge ring" href="#" aria-label="Download on the App Store">
-            <span>
-              <small>Download on the</small>
-              <strong>App Store</strong>
-            </span>
-          </a>
-          <a class="badge ghost" href="#" aria-label="Get it on Google Play" title="Coming soon">
-            <span>
-              <small>Get it on</small>
-              <strong>Google Play</strong>
-            </span>
-          </a>
-        </div>
+        <a href="support.html">Support</a> ·
+        <a href="privacy.html">Privacy</a>
       </div>
-      <div class="shot">App screenshot placeholder (add /assets/shot.png)</div>
-    </section>
-
-    <section class="features">
-      <div class="card">
-        <h3>Beautiful & minimal</h3>
-        <p>Clean Cupertino design with soft teal accents and a calming “rings globe” animation.</p>
-      </div>
-      <div class="card">
-        <h3>Haptics you can feel</h3>
-        <p>Subtle taps mark phase changes so you can keep eyes off the screen.</p>
-      </div>
-      <div class="card">
-        <h3>Progress that motivates</h3>
-        <p>See your weekly bars, streaks, and monthly totals. Export CSV in a tap.</p>
-      </div>
-    </section>
-
-    <section class="grid-2">
-      <div class="card">
-        <h3>Custom timing</h3>
-        <p>Choose beginner, balanced, or advanced — or set your own inhale/hold/exhale/rest times.</p>
-      </div>
-      <div class="card">
-        <h3>Light, Dark, or System</h3>
-        <p>Match your device appearance or pick your favorite look.</p>
-      </div>
-    </section>
-
-    <footer>
-      <div class="links">
-        <a class="pill" href="./support.html">Support</a>
-        <a class="pill" href="./privacy.html">Privacy</a>
-      </div>
-      <div>© <span id="y"></span> MindBreath</div>
-    </footer>
-  </div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+    </div>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  </footer>
 </body>
 </html>
