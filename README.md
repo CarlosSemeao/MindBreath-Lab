@@ -4,7 +4,7 @@ Welcome to the official support page for **MindBreath**.
 
 ## Support
 For help using the app, please contact:  
-📧 carlostechops@gmail.com
+📧 carlos@infrahardener.com
 
 ## Privacy Policy
 You can view our full privacy policy here:  
