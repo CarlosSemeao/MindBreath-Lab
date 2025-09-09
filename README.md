@@ -1,6 +1,14 @@
-# Privacy Policy for MindBreath
+# MindBreath Support
 
-MindBreath does not collect, use, or share any personal data.  
-All breathing exercises and progress tracking happen entirely on your device.  
+Welcome to the official support page for **MindBreath**.
 
-If you have any questions, please contact: **carlos@infrahardener.com**
+## Support
+For help using the app, please contact:  
+📧 carlostechops@gmail.com
+
+## Privacy Policy
+You can view our full privacy policy here:  
+[MindBreath Privacy Policy](https://carlossemeao.github.io/MindBreath-Lab/privacy.html)
+
+## About
+MindBreath is a breathwork assistant designed to help users manage stress, improve focus, and track progress.
