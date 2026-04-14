@@ -8,7 +8,7 @@ MindBreath is a minimal breathwork assistant to help you relax, focus, and build
 ---
 
 ## About
-- Calm, guided breathing—without the noise
+- Calm, guided breathing
 - No ads, no accounts, works offline
 - Track your progress with simple sessions
 
