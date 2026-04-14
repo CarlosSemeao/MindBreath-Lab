@@ -2,7 +2,7 @@
 
 MindBreath is a minimal breathwork assistant to help you relax, focus, and build a daily habit.  
 
-🌐 **Website:** [MindBreath Support & Privacy](https://carlossemeao.github.io/MindBreath-Lab/)  
+🌐 [MindBreath](https://carlossemeao.github.io/MindBreath-Lab/)  
 📱 Available on iOS & Android  
 
 ---
